@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn how ChooseMore helps visitors find product and service support guidance.">
+  <title>About ChooseMore | Storefront demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #172033;
+      background: #f5f7fb;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1.5rem;
+      box-sizing: border-box;
+    }
+
+    header,
+    main,
+    footer {
+      width: min(100%, 58rem);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    header {
+      margin-bottom: 0.75rem;
+      padding: 0.7rem 1rem;
+      border-radius: 0.75rem;
+      background: #fff;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      position: relative;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: #172033;
+      text-decoration: none;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
+      font-size: 1.2rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      line-height: 1;
+    }
+
+    .brand-tagline {
+      color: #64748b;
+      font-size: 0.62rem;
+      font-weight: 650;
+      letter-spacing: 0.16em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    #site-menu {
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      min-width: 0;
+      gap: 0.15rem 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #site-menu > li {
+      position: relative;
+    }
+
+    .products-dropdown > summary {
+      color: #000;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .products-dropdown > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .products-submenu {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      z-index: 2;
+      display: none;
+      flex-direction: column;
+      gap: 0.25rem;
+      min-width: 14rem;
+      margin: 0;
+      padding: 0.5rem;
+      list-style: none;
+      border: 1px solid #e2e7f0;
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 0.75rem 1.5rem rgb(23 32 51 / 12%);
+    }
+
+    .products-dropdown[open] .products-submenu {
+      display: flex;
+    }
+
+    .electronics-dropdown > summary,
+    .category-dropdown > summary {
+      padding: 0.55rem 0.65rem;
+      color: #000;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .electronics-dropdown > summary::-webkit-details-marker,
+    .category-dropdown > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .electronics-submenu,
+    .category-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 0.1rem;
+      margin: 0 0 0.35rem;
+      padding: 0 0 0 0.75rem;
+      list-style: none;
+    }
+
+    .electronics-dropdown[open] .electronics-submenu,
+    .category-dropdown[open] .category-submenu {
+      display: flex;
+    }
+
+    nav a {
+      color: #000;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: #000;
+      background: #fff7ed;
+    }
+
+    .breadcrumbs {
+      width: min(100%, 50rem);
+      box-sizing: border-box;
+      margin: 0 auto 1rem;
+      padding: 0.65rem 1rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumbs ol {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .breadcrumbs li {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .breadcrumbs li + li::before {
+      padding: 0 0.5rem;
+      color: #64748b;
+      content: ">";
+    }
+
+    .breadcrumbs a {
+      color: #3157c8;
+      text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .products-submenu a {
+      display: block;
+      padding: 0.55rem 0.65rem;
+      border-radius: 0.4rem;
+      white-space: nowrap;
+    }
+
+    main {
+      flex: 1;
+      margin: 0 auto;
+      width: min(100%, 42rem);
+      padding: clamp(2rem, 7vw, 4rem);
+      border: 1px solid #e2e7f0;
+      border-radius: 1rem;
+      background: #fff;
+      box-shadow: 0 1rem 3rem rgb(23 32 51 / 8%);
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 7vw, 3.25rem);
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: #4b5568;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .about-lead {
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .about-note {
+      padding: 1rem 1.1rem;
+      border: 1px solid #dbe1ea;
+      border-radius: 0.5rem;
+      background: #fff;
+    }
+
+    .about-table-wrap {
+      margin-top: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .about-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      color: #4b5568;
+      line-height: 1.65;
+    }
+
+    .about-table caption {
+      padding: 0 0 0.65rem;
+      color: #172033;
+      font-size: 1.15rem;
+      font-weight: 750;
+      text-align: left;
+    }
+
+    .about-table th,
+    .about-table td {
+      padding: 0.8rem;
+      border: 1px solid #e2e7f0;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    .about-table th {
+      width: 27%;
+      color: #172033;
+      background: #f6f8ff;
+    }
+
+    .about-table a {
+      color: #3157c8;
+      text-underline-offset: 0.18em;
+    }
+
+    @media (max-width: 38rem) {
+      main {
+        padding: 1.5rem;
+      }
+    }
+
+    footer {
+      width: min(100%, 58rem);
+      margin: auto auto 0;
+      padding: 1.25rem 1rem;
+      border-top: 1px solid #dbe1ea;
+      color: #000;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex: none;
+      grid-column: 1 / -1;
+      color: #000;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .footer-meta {
+      display: block;
+      flex: none;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex: none;
+      flex-wrap: nowrap;
+      justify-self: start;
+      gap: 0 0.25rem;
+      white-space: nowrap;
+    }
+
+    .footer-links a {
+      color: #000;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-underline-offset: 0.2em;
+    }
+
+    @media (max-width: 48rem) {
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-meta,
+      .footer-links {
+        white-space: normal;
+      }
+
+      .footer-links {
+        justify-self: start;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="site-layout.css?v=13">
+  </head>
+<body class="about-page">
+  <header class="site-header">
+  <a class="site-wordmark" href="index.html">ChooseMore</a>
+  <nav class="side-menu" id="site-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+  </nav>
+  <section class="sidebar-categories" aria-labelledby="sidebar-categories-heading">
+    <h2 id="sidebar-categories-heading">Shop by category</h2>
+    <ul class="category-list">
+      <li>Men's Fashion</li>
+      <li>Women's Fashion</li>
+      <li>Home &amp; Kitchen</li>
+      <li>Kid's Fashion</li>
+      <li>Beauty &amp; Health</li>
+      <li>Automotives</li>
+      <li>Mobile Accessories</li>
+      <li>Electronics</li>
+      <li>Sports &amp; Fitness</li>
+      <li>Computers &amp; Gaming</li>
+      <li>Books</li>
+      <li>Hobbies</li>
+    </ul>
+  </section>
+  <nav class="side-menu side-menu-secondary" aria-label="Support navigation">
+      <a href="order-help.html">Order Help</a>
+      <a href="products.html#add-item">Add New Item</a>
+      <a href="index.html#accessories">Service Help</a>
+      <a href="contact.html">Contact Support</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="signin.html">Account</a>
+  </nav>
+</header>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">About</span></li>
+    </ol>
+  </nav>
+  <main>
+    <h1>About ChooseMore</h1>
+    <p class="about-lead">ChooseMore is a storefront demonstration built around practical browsing: explore sample items, compare illustrative details, and preview a simple shopping and product-help flow.</p>
+    <p class="about-note"><strong>Demo scope:</strong> Product names, images, prices, and specifications are original samples. Checkout does not place an order or process payment. The local enquiry API only validates a preview request; it does not create support tickets, verify orders, or retain customer details.</p>
+
+    <div class="about-table-wrap">
+      <table class="about-table">
+        <caption>ChooseMore support at a glance</caption>
+        <thead>
+          <tr><th scope="col">Area</th><th scope="col">Details</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Sample catalog</th>
+            <td><a href="products.html">Browse the collection</a> by category, inspect illustrative product specifications, and add sample items to a temporary bag.</td>
+          </tr>
+          <tr>
+            <th scope="row">Product guidance</th>
+            <td>Have the product name, model or part number, serial number when relevant, and a clear description of the issue ready. Check the latest manufacturer instructions before use.</td>
+          </tr>
+          <tr>
+            <th scope="row">Order enquiries</th>
+            <td><a href="order-help.html">Prepare an enquiry preview</a> for a sample product issue, replacement, or service request. It is not sent to a support team or matched to a live order.</td>
+          </tr>
+          <tr>
+            <th scope="row">Service and warranty</th>
+            <td>Repair, installation, return, and warranty terms depend on the provider and product. Confirm eligibility and service availability directly with the original seller or manufacturer.</td>
+          </tr>
+          <tr>
+            <th scope="row">Safety</th>
+            <td>Do not rely on general web guidance for electrical, industrial, medical, or other safety-critical work. Follow product instructions and consult a qualified professional.</td>
+          </tr>
+          <tr>
+            <th scope="row">Contact and accounts</th>
+            <td>Account access and live support channels are not connected. Use fictional details in any preview form; form data is not retained.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <a class="footer-brand" href="index.html" aria-label="ChooseMore home">ChooseMore</a>
+      <div class="footer-meta">
+        <span>&copy; 2026 ChooseMore. All rights reserved.</span>
+      </div>
+      <nav class="footer-links" aria-label="Legal information">
+        <a href="legal.html#copyright">Copyright</a>
+        <a href="legal.html#standards">IEEE &amp; ISO Standards</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="legal.html#terms">Terms of Use</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="category-nav.js?v=1"></script>
+  <script src="breadcrumbs.js?v=4"></script>
+</body>
+</html>

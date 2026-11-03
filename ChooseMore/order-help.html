@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Prepare a ChooseMore product enquiry for damage, replacement, or service using sample product details.">
+    <title>Order &amp; Product Help | ChooseMore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site-layout.css?v=14">
+    <link rel="stylesheet" href="storefront.css?v=2">
+    <script src="preview-config.js"></script>
+  </head>
+  <body class="store-page order-help-page">
+    <div class="page-shell store-shell">
+      <header class="site-header">
+        <a class="site-wordmark" href="index.html">ChooseMore</a>
+        <nav class="side-menu" id="site-menu" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+        </nav>
+        <section class="sidebar-categories" aria-labelledby="sidebar-categories-heading">
+          <h2 id="sidebar-categories-heading">Shop by category</h2>
+          <ul class="category-list">
+            <li>Men's Fashion</li>
+            <li>Women's Fashion</li>
+            <li>Home &amp; Kitchen</li>
+            <li>Kid's Fashion</li>
+            <li>Beauty &amp; Health</li>
+            <li>Automotives</li>
+            <li>Mobile Accessories</li>
+            <li>Electronics</li>
+            <li>Sports &amp; Fitness</li>
+            <li>Computers &amp; Gaming</li>
+            <li>Books</li>
+            <li>Hobbies</li>
+          </ul>
+        </section>
+        <nav class="side-menu side-menu-secondary" aria-label="Support navigation">
+          <a href="order-help.html" aria-current="page">Order Help</a>
+          <a href="products.html#add-item">Add New Item</a>
+          <a href="index.html#accessories">Service Help</a>
+          <a href="contact.html">Contact Support</a>
+          <a href="about.html">About</a>
+          <a href="signin.html">Account</a>
+        </nav>
+      </header>
+
+      <main class="store-main">
+        <div class="store-toolbar">
+          <p class="demo-label"><span aria-hidden="true"></span> Product care · enquiry preview</p>
+          <a class="cart-trigger" href="products.html#catalog">Continue shopping <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="api-status" data-api-status role="status" aria-live="polite">Connecting to the local catalog…</p>
+
+        <nav class="store-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Order Help</span>
+        </nav>
+
+        <section class="order-help-heading" aria-labelledby="order-help-title">
+          <p class="section-overline">Here to help</p>
+          <h1 id="order-help-title">Tell us what happened.</h1>
+          <p>Select a sample ChooseMore item and prepare an enquiry for damage, replacement, or service. The selected product's sample details will be included in the preview.</p>
+        </section>
+
+        <div class="order-help-grid">
+          <section class="order-product-panel" aria-labelledby="existing-product-title">
+            <h2 id="existing-product-title">Select an existing product</h2>
+            <p class="order-panel-note">This sample catalog is the only product source in the preview. It does not look up real orders or customer accounts.</p>
+            <label class="order-product-select">
+              Product
+              <select data-enquiry-product name="product" form="order-enquiry-form" required>
+                <option value="">Choose a sample product</option>
+              </select>
+            </label>
+            <div class="order-product-detail" data-enquiry-details aria-live="polite">
+              <p class="order-detail-placeholder">Choose a product to see its sample description and specifications.</p>
+            </div>
+            <label class="order-reference-field">
+              Order reference (optional)
+              <input type="text" name="order-reference" form="order-enquiry-form" autocomplete="off" placeholder="Use a demo reference only">
+            </label>
+            <p class="order-panel-note">Order references are not checked against a live order system.</p>
+          </section>
+
+          <section class="order-form-panel" aria-labelledby="enquiry-title">
+            <h2 id="enquiry-title">Prepare an enquiry</h2>
+            <p class="order-panel-note">Use fictional contact details. This preview does not send or save your information.</p>
+            <form class="order-enquiry-form" id="order-enquiry-form" data-order-enquiry>
+              <label>
+                What do you need help with?
+                <select name="reason" required>
+                  <option value="">Choose an enquiry type</option>
+                  <option value="damage">Damage or fault</option>
+                  <option value="replacement">Replacement request</option>
+                  <option value="service">Repair or service request</option>
+                  <option value="product-question">Product question</option>
+                </select>
+              </label>
+              <label>
+                Name for preview
+                <input name="name" type="text" autocomplete="off" required>
+              </label>
+              <label>
+                Email for preview
+                <input name="email" type="email" autocomplete="off" required>
+              </label>
+              <label>
+                Describe the issue
+                <textarea name="message" rows="5" required placeholder="Include the issue, when it started, and any steps already tried."></textarea>
+              </label>
+              <button class="shop-button" type="submit">Review enquiry preview</button>
+              <p class="form-status" data-enquiry-status role="status" aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+
+        <p class="store-disclaimer">Demo only: this form does not create a support ticket, contact ChooseMore, verify an order, or save customer history. Share the real process and data relationships when ready, and this screen can be connected to them.</p>
+      </main>
+
+      <footer class="store-footer">
+        <div class="footer-content">
+          <a class="footer-brand" href="index.html" aria-label="ChooseMore home">ChooseMore</a>
+          <div class="footer-meta"><span>&copy; 2026 ChooseMore. Sample storefront.</span></div>
+          <nav class="footer-links" aria-label="Legal information">
+            <a href="legal.html#copyright">Copyright</a>
+            <a href="legal.html#standards">IEEE &amp; ISO Standards</a>
+            <a href="legal.html#privacy">Privacy Policy</a>
+            <a href="legal.html#terms">Terms of Use</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script src="category-nav.js?v=1"></script>
+    <script src="storefront.js?v=6"></script>
+    <script src="order-help.js?v=1"></script>
+  </body>
+</html>

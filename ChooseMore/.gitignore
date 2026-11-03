@@ -1,0 +1,16 @@
+/ChooseMore-Local-Package.zip
+/*.zip
+/*.apk
+/data.db*
+/platform-cache.db*
+/repo-metadata-cache.db*
+/session-store.db*
+/.env*
+/*.pem
+/*.key
+/*.p12
+/*.pfx
+/android-app/.gradle/
+/android-app/build/
+/android-app/app/build/
+/node_modules/

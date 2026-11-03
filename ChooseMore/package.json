@@ -1,0 +1,10 @@
+{
+  "name": "choosemore-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local ChooseMore storefront and enquiry API demo",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check storefront.js && node --check order-help.js && node --check category-nav.js && node --check preview-config.js"
+  }
+}

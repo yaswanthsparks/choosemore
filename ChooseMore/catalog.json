@@ -1,0 +1,134 @@
+[
+  {
+    "id": "relaxed-cotton-tee",
+    "category": "Men's Fashion",
+    "categorySlug": "mens-fashion",
+    "name": "Relaxed cotton tee",
+    "description": "An easy everyday layer with a relaxed shape and a clean, versatile finish.",
+    "price": 799,
+    "art": "tee",
+    "color": "#b8c5f6",
+    "specs": [["Fabric", "Cotton blend (sample)"]]
+  },
+  {
+    "id": "textured-everyday-tote",
+    "category": "Women's Fashion",
+    "categorySlug": "womens-fashion",
+    "name": "Textured everyday tote",
+    "description": "A roomy, simple carryall illustrated here as an original ChooseMore sample.",
+    "price": 899,
+    "art": "tote",
+    "color": "#f0c6a9",
+    "specs": [["Material", "Woven fabric (sample)"]]
+  },
+  {
+    "id": "stoneware-serving-set",
+    "category": "Home & Kitchen",
+    "categorySlug": "home-kitchen",
+    "name": "Stoneware serving set",
+    "description": "A small coordinated set for relaxed meals and everyday table settings.",
+    "price": 1299,
+    "art": "bowls",
+    "color": "#b7d8ca",
+    "specs": [["Material", "Stoneware (sample)"]]
+  },
+  {
+    "id": "mini-daypack",
+    "category": "Kid's Fashion",
+    "categorySlug": "kids-fashion",
+    "name": "Mini daypack",
+    "description": "A compact sample backpack with a practical shape for small everyday essentials.",
+    "price": 999,
+    "art": "backpack",
+    "color": "#f1d683",
+    "specs": [["Material", "Polyester (sample)"]]
+  },
+  {
+    "id": "daily-care-set",
+    "category": "Beauty & Health",
+    "categorySlug": "beauty-health",
+    "name": "Daily care starter set",
+    "description": "A simple sample collection of reusable personal-care accessories.",
+    "price": 649,
+    "art": "bottle",
+    "color": "#d8bee5",
+    "specs": [["Pieces", "Three accessories (sample)"]]
+  },
+  {
+    "id": "compact-car-organizer",
+    "category": "Automotives",
+    "categorySlug": "automotives",
+    "name": "Compact car organizer",
+    "description": "A foldable storage accessory, shown as a sample for keeping small items together.",
+    "price": 599,
+    "art": "car",
+    "color": "#c5d5e8",
+    "specs": [["Material", "Textile shell (sample)"]]
+  },
+  {
+    "id": "braided-charging-cable",
+    "category": "Mobile Accessories",
+    "categorySlug": "mobile-accessories",
+    "name": "Braided charging cable",
+    "description": "A sample 1.5 m braided cable. Check device compatibility before choosing a real cable.",
+    "price": 299,
+    "art": "phone",
+    "color": "#f0b5b1",
+    "specs": [["Length", "1.5 m (sample)"]]
+  },
+  {
+    "id": "foldable-desk-light",
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "name": "Foldable desk light",
+    "description": "A compact adjustable-light concept for a reading or work surface.",
+    "price": 1199,
+    "art": "lamp",
+    "color": "#efd4a1",
+    "specs": [["Power", "USB (sample)"]]
+  },
+  {
+    "id": "everyday-yoga-mat",
+    "category": "Sports & Fitness",
+    "categorySlug": "sports-fitness",
+    "name": "Everyday yoga mat",
+    "description": "A simple practice mat sample with a smooth, easy-to-roll silhouette.",
+    "price": 899,
+    "art": "dumbbell",
+    "color": "#a9d2d3",
+    "specs": [["Thickness", "6 mm (sample)"]]
+  },
+  {
+    "id": "wireless-keyboard",
+    "category": "Computers & Gaming",
+    "categorySlug": "computers-gaming",
+    "name": "Wireless keyboard",
+    "description": "A clean desk companion sample with a compact layout and wireless concept.",
+    "price": 1499,
+    "art": "keyboard",
+    "color": "#c2c8e8",
+    "specs": [["Layout", "Compact (sample)"]]
+  },
+  {
+    "id": "hardcover-notebook",
+    "category": "Books",
+    "categorySlug": "books",
+    "name": "Hardcover notebook",
+    "description": "A sturdy, everyday notebook sample for lists, notes, and ideas.",
+    "price": 449,
+    "art": "book",
+    "color": "#efb9a2",
+    "specs": [["Pages", "160 (sample)"]]
+  },
+  {
+    "id": "sketching-kit",
+    "category": "Hobbies",
+    "categorySlug": "hobbies",
+    "name": "Sketching kit",
+    "description": "A starter set concept for quick sketches, notes, and creative experiments.",
+    "price": 549,
+    "art": "palette",
+    "color": "#c2d5a5",
+    "specs": [["Pieces", "12 (sample)"]]
+  }
+]

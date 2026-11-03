@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Browse original ChooseMore sample products with illustrative descriptions and specifications.">
+    <title>Shop the Collection | ChooseMore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site-layout.css?v=14">
+    <link rel="stylesheet" href="storefront.css?v=2">
+    <script src="preview-config.js"></script>
+  </head>
+  <body class="store-page catalog-page">
+    <div class="page-shell store-shell">
+      <header class="site-header">
+        <a class="site-wordmark" href="index.html">ChooseMore</a>
+        <nav class="side-menu" id="site-menu" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+        </nav>
+        <section class="sidebar-categories" aria-labelledby="sidebar-categories-heading">
+          <h2 id="sidebar-categories-heading">Shop by category</h2>
+          <ul class="category-list">
+            <li>Men's Fashion</li>
+            <li>Women's Fashion</li>
+            <li>Home &amp; Kitchen</li>
+            <li>Kid's Fashion</li>
+            <li>Beauty &amp; Health</li>
+            <li>Automotives</li>
+            <li>Mobile Accessories</li>
+            <li>Electronics</li>
+            <li>Sports &amp; Fitness</li>
+            <li>Computers &amp; Gaming</li>
+            <li>Books</li>
+            <li>Hobbies</li>
+          </ul>
+        </section>
+        <nav class="side-menu side-menu-secondary" aria-label="Support navigation">
+          <a href="order-help.html">Order Help</a>
+          <a href="products.html#add-item">Add New Item</a>
+          <a href="index.html#accessories">Service Help</a>
+          <a href="contact.html">Contact Support</a>
+          <a href="about.html">About</a>
+          <a href="signin.html">Account</a>
+        </nav>
+      </header>
+
+      <main class="store-main">
+        <div class="store-toolbar">
+          <p class="demo-label"><span aria-hidden="true"></span> A sample storefront · illustrative details</p>
+          <button class="cart-trigger" type="button" data-cart-open>
+            Your bag <span class="cart-count" data-cart-count aria-live="polite">0</span>
+          </button>
+        </div>
+        <p class="api-status" data-api-status role="status" aria-live="polite">Connecting to the local catalog…</p>
+
+        <nav class="store-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span data-category-breadcrumb aria-current="page">All products</span>
+        </nav>
+
+        <section class="catalog-heading" id="catalog" aria-labelledby="catalog-title">
+          <div>
+            <p class="section-overline">The ChooseMore collection</p>
+            <h1 id="catalog-title">Find your next favorite.</h1>
+            <p>Browse original sample products and inspect the details before adding anything to your temporary bag.</p>
+          </div>
+          <p class="catalog-count" data-result-count aria-live="polite"></p>
+        </section>
+
+        <div class="catalog-controls">
+          <label class="catalog-search">
+            <span>Search products</span>
+            <input type="search" data-product-search placeholder="Try “desk light” or “home”" autocomplete="off">
+          </label>
+          <label class="catalog-category">
+            <span>Category</span>
+            <select data-category-select aria-label="Filter products by category">
+              <option value="">All categories</option>
+              <option value="mens-fashion">Men's Fashion</option>
+              <option value="womens-fashion">Women's Fashion</option>
+              <option value="home-kitchen">Home &amp; Kitchen</option>
+              <option value="kids-fashion">Kid's Fashion</option>
+              <option value="beauty-health">Beauty &amp; Health</option>
+              <option value="automotives">Automotives</option>
+              <option value="mobile-accessories">Mobile Accessories</option>
+              <option value="electronics">Electronics</option>
+              <option value="sports-fitness">Sports &amp; Fitness</option>
+              <option value="computers-gaming">Computers &amp; Gaming</option>
+              <option value="books">Books</option>
+              <option value="hobbies">Hobbies</option>
+            </select>
+          </label>
+          <label class="catalog-sort">
+            <span>Sort by</span>
+            <select data-product-sort aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="name">Name</option>
+            </select>
+          </label>
+        </div>
+
+        <details class="add-item-panel" id="add-item" data-add-item-panel>
+          <summary>Add a new item to a category</summary>
+          <div class="add-item-content">
+            <p>Admin-style demo only: create or amend a sample listing in an existing category. Changes are saved in this browser only; this screen has no sign-in or access control. Adding a listing does not add it to your shopping bag.</p>
+            <form class="add-item-form" data-add-product>
+              <label>
+                Existing category <span class="required-marker" aria-hidden="true">*</span>
+                <select name="category" required>
+                  <option value="">Choose a category</option>
+                  <option value="mens-fashion">Men's Fashion</option>
+                  <option value="womens-fashion">Women's Fashion</option>
+                  <option value="home-kitchen">Home &amp; Kitchen</option>
+                  <option value="kids-fashion">Kid's Fashion</option>
+                  <option value="beauty-health">Beauty &amp; Health</option>
+                  <option value="automotives">Automotives</option>
+                  <option value="mobile-accessories">Mobile Accessories</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="sports-fitness">Sports &amp; Fitness</option>
+                  <option value="computers-gaming">Computers &amp; Gaming</option>
+                  <option value="books">Books</option>
+                  <option value="hobbies">Hobbies</option>
+                </select>
+              </label>
+              <label>
+                Item name <span class="required-marker" aria-hidden="true">*</span>
+                <input name="name" type="text" maxlength="80" required>
+              </label>
+              <label>
+                Item image <span class="required-marker" aria-hidden="true">*</span>
+                <input name="images" type="file" accept="image/*" multiple aria-describedby="add-item-image-help" required>
+                <span class="field-help" id="add-item-image-help">Choose 1–10 images, each up to 8 MB. Images are resized for this browser; unsupported or invalid files show an error.</span>
+              </label>
+              <label>
+                Sample price (₹) <span class="required-marker" aria-hidden="true">*</span>
+                <input name="price" type="number" min="1" step="1" required>
+              </label>
+              <div class="item-count-field">
+                <label class="visually-hidden" for="add-item-count">Item count</label>
+                <input id="add-item-count" name="item-count" type="number" min="0" step="1" value="1" required aria-label="Available stock count" aria-describedby="add-item-count-help">
+                <span class="field-help" id="add-item-count-help">Enter a whole number; use 0 for out of stock.</span>
+              </div>
+              <label class="add-item-description">
+                Product details <span class="required-marker" aria-hidden="true">*</span>
+                <textarea name="description" rows="3" maxlength="240" required></textarea>
+              </label>
+              <fieldset class="add-item-spec-grid">
+                <legend>Sample specifications</legend>
+                <label>Specification 1 <span class="required-marker" aria-hidden="true">*</span><input name="spec-name-1" type="text" maxlength="32" required></label>
+                <label>Value 1 <span class="required-marker" aria-hidden="true">*</span><input name="spec-value-1" type="text" maxlength="80" required></label>
+              </fieldset>
+              <button class="shop-button" type="submit">Add item to category</button>
+              <p class="form-status" data-add-product-status role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </details>
+
+        <section class="product-grid catalog-grid" data-product-grid aria-label="Sample products"></section>
+        <p class="catalog-empty" data-empty-state hidden>No sample products match those filters. Try another category or search term.</p>
+
+        <details class="catalog-transfer-panel" data-catalog-transfer>
+          <summary>Catalog backup and restore</summary>
+          <div class="catalog-transfer-heading">
+            <div>
+              <h2>Back up your catalog</h2>
+              <p>Download your current catalog, including saved listings and images, or restore from a ChooseMore JSON backup. Files are handled in this browser only.</p>
+            </div>
+            <button class="shop-button" type="button" data-export-catalog>Download catalog JSON</button>
+          </div>
+          <div class="catalog-import">
+            <label for="catalog-import-file">Import a catalog backup</label>
+            <input id="catalog-import-file" data-import-catalog type="file" accept=".json,application/json">
+            <p class="field-help">Import merges by product ID: matching listings are updated, new ones are added, and all other listings stay as they are.</p>
+            <p class="form-status" data-transfer-status role="status" aria-live="polite"></p>
+            <div class="catalog-import-confirm" data-import-confirm hidden>
+              <p data-import-summary></p>
+              <button class="shop-button" type="button" data-confirm-import>Apply import in this browser</button>
+              <button class="catalog-cancel-import" type="button" data-cancel-import>Cancel</button>
+            </div>
+          </div>
+        </details>
+        <p class="store-disclaimer">Illustrative demo catalog: sample names, descriptions, prices, and specifications are not live listings. No order or payment is processed.</p>
+      </main>
+
+      <footer class="store-footer">
+        <div class="footer-content">
+          <a class="footer-brand" href="index.html" aria-label="ChooseMore home">ChooseMore</a>
+          <div class="footer-meta"><span>&copy; 2026 ChooseMore. Sample storefront.</span></div>
+          <nav class="footer-links" aria-label="Legal information">
+            <a href="legal.html#copyright">Copyright</a>
+            <a href="legal.html#standards">IEEE &amp; ISO Standards</a>
+            <a href="legal.html#privacy">Privacy Policy</a>
+            <a href="legal.html#terms">Terms of Use</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <dialog class="store-dialog" data-product-dialog aria-labelledby="product-dialog-title">
+      <div class="dialog-shell">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close product details">×</button>
+        <div class="product-detail" data-product-detail></div>
+      </div>
+    </dialog>
+
+    <dialog class="store-dialog cart-dialog" data-cart-dialog aria-labelledby="cart-title">
+      <div class="dialog-shell">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close shopping bag">×</button>
+        <p class="section-overline">Your selection</p>
+        <h2 id="cart-title">Shopping bag</h2>
+        <p class="dialog-note">Your bag and stock reservations are saved only in this browser.</p>
+        <div class="cart-items" data-cart-items></div>
+        <div class="cart-summary">
+          <span>Sample subtotal</span>
+          <strong data-cart-total>₹0</strong>
+        </div>
+        <button class="shop-button checkout-button" type="button" data-checkout-open disabled>Continue to checkout preview</button>
+        <p class="form-status" data-cart-status role="status" aria-live="polite"></p>
+      </div>
+    </dialog>
+
+    <dialog class="store-dialog checkout-dialog" data-checkout-dialog aria-labelledby="checkout-title">
+      <div class="dialog-shell">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close checkout preview">×</button>
+        <p class="section-overline">No order will be placed</p>
+        <h2 id="checkout-title">Checkout preview</h2>
+        <p class="dialog-note">Use sample details only. This form stays in your browser and does not send or save information.</p>
+        <p class="field-help">Closing this preview cancels the bag and returns reserved items to available stock.</p>
+        <form class="checkout-form" data-checkout-form>
+          <label>
+            Name for preview
+            <input name="name" type="text" autocomplete="off" required>
+          </label>
+          <label>
+            Email for preview
+            <input name="email" type="email" autocomplete="off" required>
+          </label>
+          <label data-delivery-address-field>
+            Delivery address for preview
+            <textarea name="address" rows="3" autocomplete="off" required></textarea>
+          </label>
+          <label>
+            Payment method
+            <select name="payment" required>
+              <option value="cash-delivery">Cash and delivery (COD)</option>
+              <option value="store-to-pick">Store-to-Pick (STP)</option>
+            </select>
+          </label>
+          <button class="shop-button" type="submit">Review &amp; Checkout</button>
+          <p class="form-status" data-checkout-status role="status" aria-live="polite"></p>
+        </form>
+        <section class="checkout-success" data-checkout-success hidden aria-labelledby="checkout-success-title" aria-live="polite"></section>
+      </div>
+    </dialog>
+
+    <script src="category-nav.js?v=1"></script>
+    <script src="storefront.js?v=7"></script>
+  </body>
+</html>
